@@ -5,12 +5,26 @@
 #include "catch.hpp"
 using Catch::Matchers::Equals;
 //------------------------------
-
-// Fix the following class
 class Complex {
+  private:
+    double m_a{};
+    double m_b{};
+  private:
+    Complex(double a=1.00, double b=0.00)
+    :m_a{a},m_b{b}
+    {
+  
+    }
+
+    friend std::ostream & operator << (std::ostream & out, const Complex & complex); 
+    out<<"<a>±<b>i";
+    return out
+};
+  int main();
     void operator>>(std::string&) const;
     void operator<<(const std::string&);
 };
+
 
 //------------------------------
 //   DO NOT MODIFY TEST CASES
